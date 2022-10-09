@@ -46,6 +46,8 @@ function createPokemonCard(pokemon){ // creating a CARD for each pokemon fetched
     const poke_type = pokemon.types.map(el =>el.type.name); // this extracts the types found in the API and puts it into an array (MAP)
     const type = main_types.filter(type => poke_type.indexOf(type) > -1); // returns filtered array
     const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
+     
+    const ability = pokemon.abilities.map(element => element.ability.name).join(', '); // join makes array into string joined by whatever is in the brackets
 
     const pokeInnerHTML = `
         <div class="img-container">
